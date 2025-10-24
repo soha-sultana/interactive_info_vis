@@ -43,6 +43,9 @@ registerSketch('sk2', function (p) {
     const start = now.toLocaleTimeString();
     const endDate = new Date(now.getTime() + 60 * 60 * 1000); 
     const endTime = endDate.toLocaleTimeString();
+
+    const midTop = sectionHeight;
+    const midCenterY = midTop + sectionHeight / 2;
   
 
 
