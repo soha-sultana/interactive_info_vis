@@ -24,6 +24,20 @@ registerSketch('sk2', function (p) {
     p.line(0, sectionHeight, p.width, sectionHeight);
     p.line(0, sectionHeight * 2, p.width, sectionHeight * 2);
 
+    // First Section
+    p.noStroke();
+    p.fill(60);
+    p.textAlign(p.LEFT, p.TOP);
+    p.textSize(80);
+    p.text('Class 1: History',50,50);
+
+    p.textSize(50);
+    const currentDate = new Date();
+    p.text(currentDate.toDateString(),50,150)
+
+    p.text('Assignment 2', 50,210);
+  
+
 
     };
   p.windowResized = function () { p.resizeCanvas(p.windowWidth, p.windowHeight); };
