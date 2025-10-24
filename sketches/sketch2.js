@@ -15,7 +15,7 @@ registerSketch('sk2', function (p) {
 
     // background color for second section
     p.noStroke();
-    p.fill(256,240, 190);
+    p.fill(256,220, 190);
     p.rect(0, sectionHeight, p.width, sectionHeight);
 
     // adding the section dividers (into 3 parts)
