@@ -36,6 +36,13 @@ registerSketch('sk2', function (p) {
     p.text(currentDate.toDateString(),50,150)
 
     p.text('Assignment 2', 50,210);
+
+    // Second Section
+    // initialize time variables
+    const now = new Date();
+    const start = now.toLocaleTimeString();
+    const endDate = new Date(now.getTime() + 60 * 60 * 1000); 
+    const endTime = endDate.toLocaleTimeString();
   
 
 
