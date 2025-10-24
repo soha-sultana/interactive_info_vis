@@ -13,3 +13,15 @@ registerSketch('sk2', function (p) {
     p.fill(256,200,190);
     p.rect(0, 0, p.width, sectionHeight);
 
+    // background color for second section
+    p.noStroke();
+    p.fill(256,240, 190);
+    p.rect(0, sectionHeight, p.width, sectionHeight);
+
+
+    };
+  p.windowResized = function () { p.resizeCanvas(p.windowWidth, p.windowHeight); };
+});
+
+    
+
