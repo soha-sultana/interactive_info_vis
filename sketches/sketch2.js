@@ -46,6 +46,13 @@ registerSketch('sk2', function (p) {
 
     const midTop = sectionHeight;
     const midCenterY = midTop + sectionHeight / 2;
+
+     // Left side (Start Time)
+    p.noStroke();
+    p.fill(30);
+    p.textAlign(p.LEFT, p.CENTER);
+    p.textSize(28);
+    p.text('Start:' + start, 50, midCenterY);
   
 
 
