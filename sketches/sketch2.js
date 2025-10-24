@@ -18,6 +18,12 @@ registerSketch('sk2', function (p) {
     p.fill(256,240, 190);
     p.rect(0, sectionHeight, p.width, sectionHeight);
 
+    // adding the section dividers (into 3 parts)
+    p.stroke(180);
+    p.strokeWeight(1);
+    p.line(0, sectionHeight, p.width, sectionHeight);
+    p.line(0, sectionHeight * 2, p.width, sectionHeight * 2);
+
 
     };
   p.windowResized = function () { p.resizeCanvas(p.windowWidth, p.windowHeight); };
