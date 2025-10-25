@@ -63,6 +63,13 @@ registerSketch('sk2', function (p) {
     p.stroke(40);
     p.fill(220, 120, 180)
     p.ellipse(p.width / 2, midCenterY, 100, 100);
+
+     // adding a square in the circle to act as a button
+    p.noStroke();
+    p.fill(240);
+    p.rectMode(p.CENTER);
+    p.rect(p.width / 2, midCenterY, 40, 40);
+    p.rectMode(p.CORNER);
   
 
 
