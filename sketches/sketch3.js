@@ -19,6 +19,13 @@ registerSketch('sk3', function (p) {
     p.translate(p.width / 2, p.height / 2);
     const R = p.min(p.width, p.height) * 0.45;   // outer radius
 
+    const events = [
+      { hour: 12, label: 'Midterm Exam',   angle: -90,  color: [74,144,226] }, // 12 o'clock
+      { hour: 15, label: 'Review Syllabus',angle:   0,  color: [47,128,237] }, // 3 PM
+      { hour: 18, label: 'Office Hours',   angle:  90,  color: [30,98,192]  }, // 6 PM
+      { hour: 21, label: 'Group Study',    angle: 180,  color: [15,74,153]  }  // 9 PM
+    ];
+
     // Concentric circles
     p.noStroke();
     p.fill(70, 200, 200);     // big blue circle
