@@ -57,6 +57,12 @@ registerSketch('sk2', function (p) {
      // Right side (End time)
     p.textAlign(p.RIGHT, p.CENTER);
     p.text('End Time:'+ endTime, p.width - 50, midCenterY - 6);
+
+    // adding circle in the center (to act as a button)
+    p.stroke(40);
+    p.strokeWeight(2);
+    p.fill(200,120,180);
+    p.ellipse(p.width / 2, midCenterY, 100, 100);
   
 
 
