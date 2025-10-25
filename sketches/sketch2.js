@@ -70,6 +70,12 @@ registerSketch('sk2', function (p) {
     p.rectMode(p.CENTER);
     p.rect(p.width / 2, midCenterY, 40, 40);
     p.rectMode(p.CORNER);
+
+    
+    // Third section
+    p.noStroke();
+    p.fill(200,256,220);
+    p.rect(0, sectionHeight * 2, p.width, sectionHeight);
   
 
 
