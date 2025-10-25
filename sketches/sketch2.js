@@ -48,11 +48,12 @@ registerSketch('sk2', function (p) {
     const midCenterY = midTop + sectionHeight / 2;
 
      // Left side (Start Time)
-    p.noStroke();
+     p.noStroke();
     p.fill(30);
     p.textAlign(p.LEFT, p.CENTER);
     p.textSize(28);
-    p.text('Start:' + start, 50, midCenterY);
+    p.text('Current Time:'+ start, 50, midCenterY - 6);
+    p.textAlign(p.LEFT, p.TOP);
 
      // Right side (End time)
     p.textAlign(p.RIGHT, p.CENTER);
@@ -60,8 +61,7 @@ registerSketch('sk2', function (p) {
 
     // adding circle in the center (to act as a button)
     p.stroke(40);
-    p.strokeWeight(2);
-    p.fill(200,120,180);
+    p.fill(220, 120, 180)
     p.ellipse(p.width / 2, midCenterY, 100, 100);
   
 
