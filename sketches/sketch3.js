@@ -27,7 +27,7 @@ registerSketch('sk3', function (p) {
     p.fill(255);          // inner white circle
     p.circle(0, 0, R * 1.5);
 
-    p.fill(0);            // small black center circle (hub)
+    p.fill(70,200,200); // small blue circle
     p.circle(0, 0, R * 0.14);
 
     // Angles (0° at 12 o'clock)
