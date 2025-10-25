@@ -72,10 +72,16 @@ registerSketch('sk2', function (p) {
     p.rectMode(p.CORNER);
 
     
-    // Third section
+     // Third section
     p.noStroke();
-    p.fill(200,256,220);
+    p.fill(190,256,220);
     p.rect(0, sectionHeight * 2, p.width, sectionHeight);
+
+    // Resources text
+    p.fill(60);
+    p.textAlign(p.LEFT, p.TOP);
+    p.textSize(80);
+    p.text('Resources:', 50, sectionHeight * 2 + 50);
   
 
 
