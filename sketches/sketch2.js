@@ -82,6 +82,8 @@ registerSketch('sk2', function (p) {
     p.textAlign(p.LEFT, p.TOP);
     p.textSize(80);
     p.text('Resources:', 50, sectionHeight * 2 + 50);
+    p.textSize(20);
+    p.text('- Textbook\n- Lecture Slides\n- Online Articles\n- Tutorials\n- Documentation', 50, sectionHeight * 2 + 150);
   
 
 
