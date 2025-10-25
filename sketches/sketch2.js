@@ -26,7 +26,7 @@ registerSketch('sk2', function (p) {
 
     // First Section
     p.noStroke();
-    p.fill(60);
+    p.fill(30);
     p.textAlign(p.LEFT, p.TOP);
     p.textSize(80);
     p.text('Class 1: History',50,50);
@@ -78,7 +78,7 @@ registerSketch('sk2', function (p) {
     p.rect(0, sectionHeight * 2, p.width, sectionHeight);
 
     // Resources text
-    p.fill(60);
+    p.fill(30);
     p.textAlign(p.LEFT, p.TOP);
     p.textSize(80);
     p.text('Resources:', 50, sectionHeight * 2 + 50);
