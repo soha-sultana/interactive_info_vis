@@ -53,6 +53,10 @@ registerSketch('sk2', function (p) {
     p.textAlign(p.LEFT, p.CENTER);
     p.textSize(28);
     p.text('Start:' + start, 50, midCenterY);
+
+     // Right side (End time)
+    p.textAlign(p.RIGHT, p.CENTER);
+    p.text('End Time:'+ endTime, p.width - 50, midCenterY - 6);
   
 
 
