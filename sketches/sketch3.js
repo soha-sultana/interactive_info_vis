@@ -7,7 +7,7 @@ registerSketch('sk3', function (p) {
   };
 
   p.draw = function () {
-    p.background(240);
+    p.background(230, 230, 250);
     
       p.textAlign(p.LEFT, p.TOP);
     p.textSize(50);
