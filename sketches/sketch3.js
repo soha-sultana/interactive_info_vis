@@ -8,8 +8,8 @@ registerSketch('sk3', function (p) {
 
   p.draw = function () {
     p.background(240);
-    // Title (left)
-    p.textAlign(p.LEFT, p.TOP);
+    
+      p.textAlign(p.LEFT, p.TOP);
     p.textSize(50);
     p.fill(0);
     p.text('Exam Prep Tracker', 60, 30);
@@ -18,7 +18,7 @@ registerSketch('sk3', function (p) {
     p.textAlign(p.LEFT, p.TOP);
     p.textSize(20);
     p.fill(0);
-    const summaryText = 'Welcome to your midterm exam prep clock\nthat helps you know how to break up\nyour time to study!\nThe highlighted time indicates what\nactivity you should be focusing on.';
+    const summaryText = 'Welcome to your midterm exam prep\n clock that helps you know how to\n break up your time to study!\nThe highlighted time indicates what\nactivity you should be focusing on.';
     p.text(summaryText, 60, 250);
 
     // Draw the clock
