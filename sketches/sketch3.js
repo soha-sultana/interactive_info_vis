@@ -8,8 +8,20 @@ registerSketch('sk3', function (p) {
 
   p.draw = function () {
     p.background(240);
-    p.clock();
+   // p.clock();
   }
+     // Add title at the top
+    p.textAlign(p.CENTER, p.TOP);
+    p.textSize(40);
+    p.fill(30);
+    p.text('Midterm Exam Prep', p.width/2, 30);
+    
+    // Add summary text on the left
+    p.textAlign(p.LEFT, p.TOP);
+    p.textSize(16);
+    p.fill(60);
+    const summaryText = 'Welcome to your midterm exam prep clock\nthat helps you know how to break up\nyour time to study!';
+    p.text(summaryText, 30, p.height/2 - 50);
 
   // replaced clock() to add labeled sections and highlight them by hour
   p.clock = function () {
