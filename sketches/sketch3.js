@@ -35,11 +35,11 @@ registerSketch('sk3', function (p) {
     const R = p.min(p.width, p.height) * 0.45;   // outer radius
 
     // Define events at cardinal times (hours in 24h)
-    const events = [
-      { hour: 12, label: 'Midterm Exam',   angle: -90,  color: [74,144,226], offsetX: 0},
-      { hour: 15, label: 'Review Syllabus',angle:   0,  color: [47,128,237], offsetX: 30},
-      { hour: 18, label: 'Office Hours',   angle:  90,  color: [30,98,192], offsetX:0},
-      { hour: 21, label: 'Group Study',    angle: 180,  color: [15,74,153], offsetX: 0}
+      const events = [
+      { start: 12, end: 15, label: 'Midterm Exam',    angle: -90, color: [74,144,226] }, // 12:00–14:59 (12–3)
+      { start: 15, end: 18, label: 'Review Syllabus',  angle:   0, color: [47,128,237] }, // 15:00–17:59 (3–6)
+      { start: 18, end: 21, label: 'Office Hours',     angle:  90, color: [30,98,192]  }, // 18:00–20:59 (6–9)
+      { start: 21, end: 24, label: 'Group Study',      angle: 180, color: [15,74,153]  }  // 21:00–23:59 (9–12)
     ];
 
     // Base big circle (light blue)
