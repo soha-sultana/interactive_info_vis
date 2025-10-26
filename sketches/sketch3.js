@@ -83,7 +83,7 @@ registerSketch('sk3', function (p) {
       const isActive = (h === ev.hour);
       if (isActive) {
         // use contrasting white text when highlighted
-        p.fill(255);
+        p.fill(256, 0,0);
         p.textSize(18);
         p.text(ev.label, lx, ly);
       } else {
