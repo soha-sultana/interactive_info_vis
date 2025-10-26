@@ -24,10 +24,10 @@ registerSketch('sk3', function (p) {
 
     // Define events at cardinal times (hours in 24h)
     const events = [
-      { hour: 12, label: 'Midterm Exam',   angle: -90,  color: [74,144,226] }, // 12 o'clock
-      { hour: 15, label: 'Review Syllabus',angle:   0,  color: [47,128,237] }, // 3 PM
-      { hour: 18, label: 'Office Hours',   angle:  90,  color: [30,98,192]  }, // 6 PM
-      { hour: 21, label: 'Group Study',    angle: 180,  color: [15,74,153]  }  // 9 PM
+      { hour: 12, label: 'Midterm Exam',   angle: -90,  color: [74,144,226], offsetX: 0},
+      { hour: 15, label: 'Review Syllabus',angle:   0,  color: [47,128,237], offsetX: 30},
+      { hour: 18, label: 'Office Hours',   angle:  90,  color: [30,98,192], offsetX:0},
+      { hour: 21, label: 'Group Study',    angle: 180,  color: [15,74,153], offsetX: 0}
     ];
 
     // Base big circle (light blue)
@@ -42,7 +42,7 @@ registerSketch('sk3', function (p) {
     // quarter size = 90 degrees; start angles adjusted so -90 is top
     for (let i = 0; i < events.length; i++) {
       const ev = events[i];
-      const startA = ev.angle - 45;
+      const startA = ev.angle - 50
       const endA = ev.angle + 45;
       // active when current hour equals event.hour
       if (h === ev.hour) {
@@ -77,7 +77,8 @@ registerSketch('sk3', function (p) {
     // choose label fill depending on whether its section is active
     events.forEach(ev => {
       const ang = ev.angle;
-      const lx = p.cos(ang) * (R * 0.62);
+      const baseLx = p.cos(ang) * (R * 0.62);
+      const lx = baseLx + (ev.offsetX || 0);
       const ly = p.sin(ang) * (R * 0.62);
       const isActive = (h === ev.hour);
       if (isActive) {
