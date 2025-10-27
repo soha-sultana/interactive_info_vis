@@ -10,6 +10,27 @@ p.setup = function () {
     const margin = 40;
     const boxAlpha = 200;
     const boxRadius = 12;
+
+    function drawInfoBox(x, y, w, h, txt) {
+      p.push();
+      p.noStroke();
+      p.fill(30, 40, 70, boxAlpha);
+      p.rect(x, y, w, h, boxRadius);
+      p.fill(230, 230, 250); // lavender-ish text
+      p.textAlign(p.LEFT, p.CENTER);
+      p.textSize(Math.max(12, Math.min(20, w / 25)));
+      p.text(txt, x + 14, y + h / 2, w - 28, h - 8);
+      p.pop();
+    }
+
+    // top-right box
+    drawInfoBox(p.width - 360, margin, 320, 90, "Make sure to get a good night's rest");
+
+    // bottom-left box
+    drawInfoBox(margin, p.height - 140, 360, 90, "Review materials in the morning");
+
+    // bottom-right box
+    drawInfoBox(p.width - 420, p.height - 140, 380, 90, "Make sure to take breaks");
   }
 
   p.clock = function () {
