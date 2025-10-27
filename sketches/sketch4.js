@@ -61,16 +61,17 @@ p.setup = function () {
     let mn = p.minute();
     let sc = p.second();
 
-    p.fill("lavender");
+      p.fill(200, 200, 250); // lavender for clock text
     // p.textFont(clockFont);
     p.textAlign(p.CENTER, p.CENTER);
     p.textSize(p.width / 10);
-    let noon = hr >= 12 ? " PM" : " AM"
-    if (mn < 10)
-      mn = "0" + mn
-    hr %= 12
-    p.text(hr + ":" + mn + ":" + sc + noon, p.width / 2, p.height / 2);
-
+    let noon = hr >= 12 ? " PM" : " AM";
+    let displayHr = hr % 12;
+    if (displayHr === 0) displayHr = 12;
+    let mnStr = mn < 10 ? "0" + mn : "" + mn;
+    let scStr = sc < 10 ? "0" + sc : "" + sc;
+    p.text(displayHr + ":" + mnStr + ":" + scStr + noon, p.width / 2, p.height / 2);
+  }
   }
   p.windowResized = function () { p.resizeCanvas(p.windowWidth, p.windowHeight); };
 });
