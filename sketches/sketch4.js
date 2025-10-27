@@ -19,7 +19,7 @@ p.setup = function () {
       p.fill(230, 230, 250); // lavender-ish text
       p.textAlign(p.LEFT, p.CENTER);
       p.textSize(Math.max(12, Math.min(20, w / 25)));
-      p.text(txt, x + 14, y + h / 2, w - 28, h - 8);
+      p.text(txt, x + 65,y + 50);
       p.pop();
        // top-right box
     drawInfoBox(p.width - 360, margin, 320, 90, "Make sure to get a good night's rest");
@@ -48,7 +48,7 @@ p.setup = function () {
      // night mode text inside card
     p.fill(230, 230, 250); // lavender text
     p.textAlign(p.LEFT, p.CENTER);
-    p.textSize(20);
+    p.textSize(15);
     p.text("Night mode is on", mx + 120, my + mh / 2);
     p.pop();
 
