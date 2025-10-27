@@ -15,7 +15,7 @@ registerSketch('sk2', function (p) {
 
     // background color for second section
     p.noStroke();
-    p.fill(256,220, 190);
+    p.fill(256,220,190);
     p.rect(0, sectionHeight, p.width, sectionHeight);
 
     // adding the section dividers (into 3 parts)
@@ -44,35 +44,35 @@ registerSketch('sk2', function (p) {
     const endDate = new Date(now.getTime() + 60 * 60 * 1000); 
     const endTime = endDate.toLocaleTimeString();
 
+    // add position variables 
     const midTop = sectionHeight;
     const midCenterY = midTop + sectionHeight / 2;
 
-     // Left side (Start Time)
-     p.noStroke();
+    // Left side (Start Time)
+    p.noStroke();
     p.fill(30);
     p.textAlign(p.LEFT, p.CENTER);
-    p.textSize(28);
+    p.textSize(40);
     p.text('Current Time:'+ start, 50, midCenterY - 6);
     p.textAlign(p.LEFT, p.TOP);
 
-     // Right side (End time)
+    // Right side (End time)
     p.textAlign(p.RIGHT, p.CENTER);
-    p.text('End Time:'+ endTime, p.width - 50, midCenterY - 6);
+    p.text('End Time:'+ endTime, p.width-50, midCenterY - 5);
 
     // adding circle in the center (to act as a button)
     p.stroke(40);
     p.fill(220, 120, 180)
     p.ellipse(p.width / 2, midCenterY, 100, 100);
 
-     // adding a square in the circle to act as a button
+    // adding a square in the circle to act as a button 
     p.noStroke();
-    p.fill();
+    p.fill(0);
     p.rectMode(p.CENTER);
     p.rect(p.width / 2, midCenterY, 40, 40);
     p.rectMode(p.CORNER);
 
-    
-     // Third section
+    // Third section
     p.noStroke();
     p.fill(190,256,220);
     p.rect(0, sectionHeight * 2, p.width, sectionHeight);
@@ -87,9 +87,12 @@ registerSketch('sk2', function (p) {
   
 
 
-    };
+  //  p.fill(100, 150, 240);
+  //  p.textSize(32);
+  //  p.textAlign(p.CENTER, p.CENTER);
+  //  p.text('HWK #4. A', p.width / 2, p.height / 2);
+  };
   p.windowResized = function () { p.resizeCanvas(p.windowWidth, p.windowHeight); };
 });
-
     
 
