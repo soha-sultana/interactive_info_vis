@@ -60,6 +60,11 @@ p.setup = function () {
     let hr = p.hour();
     let mn = p.minute();
     let sc = p.second();
+      
+       p.fill(230, 230, 250);
+    p.textAlign(p.CENTER, p.CENTER);
+    p.textSize(40);
+    p.text("Night Study", p.width / 2, 90);
 
       p.fill(200, 200, 250); // lavender for clock text
     // p.textFont(clockFont);
