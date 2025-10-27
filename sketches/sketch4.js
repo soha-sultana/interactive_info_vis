@@ -6,8 +6,10 @@ p.setup = function () {
   };
 
   p.draw = function () {
-    p.background(0);
-    p.clock();
+    p.background(10);
+    const margin = 40;
+    const boxAlpha = 200;
+    const boxRadius = 12;
   }
 
   p.clock = function () {
