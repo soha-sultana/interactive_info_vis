@@ -1,4 +1,3 @@
-// ...existing code...
 // Instance-mode sketch for tab 3
 registerSketch('sk3', function (p) {
   p.setup = function () {
@@ -8,8 +7,9 @@ registerSketch('sk3', function (p) {
 
   p.draw = function () {
     p.background(230, 230, 250);
-    
-      p.textAlign(p.LEFT, p.TOP);
+
+    // Title (left)
+    p.textAlign(p.LEFT, p.TOP);
     p.textSize(50);
     p.fill(0);
     p.text('Exam Prep Tracker', 60, 30);
