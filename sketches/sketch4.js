@@ -21,6 +21,14 @@ p.setup = function () {
       p.textSize(Math.max(12, Math.min(20, w / 25)));
       p.text(txt, x + 14, y + h / 2, w - 28, h - 8);
       p.pop();
+
+     // crescent moon inside a rectangle (top-left) with text "Night mode is on"
+    const mx = 40, my = 40, mw = 260, mh = 120;
+    p.push();
+    // moon card
+    p.noStroke();
+    p.fill(25, 30, 50);
+    p.rect(mx, my, mw, mh, 14);
     }
 
     // top-right box
