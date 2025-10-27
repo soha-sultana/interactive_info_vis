@@ -30,6 +30,13 @@ p.setup = function () {
     p.fill(25, 30, 50);
     p.rect(mx, my, mw, mh, 14);
     }
+     // crescent moon (two overlapping ellipses)
+    const moonCX = mx + 60, moonCY = my + mh / 2;
+    p.fill(250, 245, 200); // pale moon
+    p.ellipse(moonCX, moonCY, 72, 72);
+    p.fill(25, 30, 50); // cutout to form crescent, same as card bg
+    p.ellipse(moonCX + 18, moonCY - 6, 58, 58);
+
 
     // top-right box
     drawInfoBox(p.width - 360, margin, 320, 90, "Make sure to get a good night's rest");
