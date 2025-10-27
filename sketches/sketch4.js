@@ -21,6 +21,14 @@ p.setup = function () {
       p.textSize(Math.max(12, Math.min(20, w / 25)));
       p.text(txt, x + 14, y + h / 2, w - 28, h - 8);
       p.pop();
+       // top-right box
+    drawInfoBox(p.width - 360, margin, 320, 90, "Make sure to get a good night's rest");
+
+    // bottom-left box
+    drawInfoBox(margin, p.height - 140, 360, 90, "Review materials in the morning");
+
+    // bottom-right box
+    drawInfoBox(p.width - 420, p.height - 140, 380, 90, "Make sure to take breaks");
 
      // crescent moon inside a rectangle (top-left) with text "Night mode is on"
     const mx = 40, my = 40, mw = 260, mh = 120;
@@ -37,15 +45,6 @@ p.setup = function () {
     p.fill(25, 30, 50); // cutout to form crescent, same as card bg
     p.ellipse(moonCX + 18, moonCY - 6, 58, 58);
 
-
-    // top-right box
-    drawInfoBox(p.width - 360, margin, 320, 90, "Make sure to get a good night's rest");
-
-    // bottom-left box
-    drawInfoBox(margin, p.height - 140, 360, 90, "Review materials in the morning");
-
-    // bottom-right box
-    drawInfoBox(p.width - 420, p.height - 140, 380, 90, "Make sure to take breaks");
   }
 
   p.clock = function () {
