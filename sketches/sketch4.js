@@ -52,6 +52,8 @@ p.setup = function () {
     p.text("Night mode is on", mx + 120, my + mh / 2);
     p.pop();
 
+    p.clock();
+
   }
 
   p.clock = function () {
