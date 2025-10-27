@@ -45,6 +45,13 @@ p.setup = function () {
     p.fill(25, 30, 50); // cutout to form crescent, same as card bg
     p.ellipse(moonCX + 18, moonCY - 6, 58, 58);
 
+     // night mode text inside card
+    p.fill(230, 230, 250); // lavender text
+    p.textAlign(p.LEFT, p.CENTER);
+    p.textSize(20);
+    p.text("Night mode is on", mx + 120, my + mh / 2);
+    p.pop();
+
   }
 
   p.clock = function () {
