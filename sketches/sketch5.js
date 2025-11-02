@@ -67,7 +67,7 @@ registerSketch('sk5', function (p) {
     p.fill(240, 150, 150);
     p.rect(0, gridY + cellHeight, cellWidth, cellHeight);
 
-     let jobX = [];
+    // let jobX = [];
     Occupations = [];
 
      // Add labels to each section
