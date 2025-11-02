@@ -31,6 +31,7 @@ registerSketch('sk5', function (p) {
 
   p.draw = function () {
     p.background(250);
+    const headerHeight = Math.min(100, p.height * 0.1);
     
     // Added title 
     p.noStroke();
