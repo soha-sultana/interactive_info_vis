@@ -71,44 +71,56 @@ registerSketch('sk5', function (p) {
     Occupations = [];
 
     // function to render the job lists and make them clickable for each section
-    function renderJobList(CenterX, topY, titleText, jobs, rankText){
-      // adding title for job list
-      p.textSize(22);
-      p.fill(256);
-      p.text(titleText, CenterX. topY + cellHeight * 0.15);
-      p.textSize(14);
-      p.fill(256, 220);
-      p.text(rankText, CenterX, topY + cellHeight * 0.07);
-
-      // listing jobs
-      p.textSize(18);
-+     p.fill(255);
-      const gap = 28;
-      const startY = topY + cellHeight * 0.30 - ((jobs.length - 1) * gap) / 2;
-      for(let i = 0; i < jobs.length; i++){
-        const job = jobs[i].title;
-        const summary = jobs[i].summary;
-        const y = startY + i * gap;
-        p.text(job, CenterX, y);
-        // bounding box when clicked
-        const w = p.textWidth(job);
-        const h = p.textAscent() + p.textDescent();
-        const bx = centerX - w / 2;
-        const by = y - h / 2;
-        Occupations.push({job, summary, bx, by, w, h});
+    function renderJobList(centerX, topY, titleText, jobs, rankText) {
+      p.textAlign(p.CENTER, p.CENTER);
       
-        // underline job when mouse hovers
-        if(p.mouseX >= bx && p.mouseX <= bx + w && p.mouseY >= by && p.mouseY <= by + h){
-          p.push();
-          p.stroke(256, 220);
-          p.strokeWeight(1.5);
-          p.line(bx, y + h / 2 + 6, bx + w, y + h / 2 + 6);
-          p.pop();
+      // Title
+      p.textSize(22);
+      p.fill(255);
+      p.text(titleText, centerX, topY + cellHeight * 0.15);
+      
+      // Rank
+      p.textSize(14);
+      p.fill(255, 220);
+      p.text(rankText, centerX, topY + cellHeight * 0.07);
 
+      // Jobs
+      p.textSize(18);
+      p.fill(255);
+      const gap = 28;
+      const startY = topY + cellHeight * 0.30;
+      
+      for(let i = 0; i < jobs.length; i++) {
+        const job = jobs[i];
+        const y = startY + i * gap;
+        p.text(job.title, centerX, y);
+        
+        // Calculating clickable area
+        const w = p.textWidth(job.title);
+        const h = p.textAscent() + p.textDescent();
+        const x = centerX - w/2;
+        const by = y - h/2;
+        
+        // Store job data for click
+        Occupations.push({
+          title: job.title,
+          summary: job.summary,
+          x: x,
+          y: by,
+          w: w,
+          h: h
+        });
+
+        // Hover effect
+        if(p.mouseX >= x && p.mouseX <= x + w && 
+           p.mouseY >= by && p.mouseY <= by + h) {
+          p.stroke(255, 220);
+          p.strokeWeight(1.5);
+          p.line(x, y + h/2 + 2, x + w, y + h/2 + 2);
+          p.noStroke();
         }
       }
     }
-  };
 
     // rendering the job lists 
   renderJobList(cellWidth / 2, gridY, "High Stress Jobs", highStressJobs, "(7-10)");
