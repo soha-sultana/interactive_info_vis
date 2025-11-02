@@ -128,22 +128,26 @@ registerSketch('sk5', function (p) {
   renderJobList(cellWidth + cellWidth / 2, gridY + cellHeight, "Mild Stress Jobs", mildStressJobs, "(3-5)");
   renderJobList(cellWidth/2, gridY + cellHeight, "Low Stress Jobs", "This dataset did not have jobs for this category", "Rank: 1-3");
 
-  // checking when a job is currently active
-   if(jobSummary){
-    const boxW = Math.min(760, p.width - 60);
-    const boxH = Math.min(160, p.height * 0.22);
-    const boxX = p.width / 2 - boxW / 2;
-    const boxY = p.height / 2 - boxH - 24;
-    p.push();
-    p.fill(30, 30, 40, 230);
-    p.noStroke
-    p.rect(boxX, boxY, boxW, boxH, 10);
-    p.fill(256);
-    p.textAlign(p.LEFT, p.TOP);
-    p.textSize(20);
-    p.text(jobSummary.title + " - " + jobSummary.summary, boxX + 16, boxY + 12, boxW - 32, boxH - 24);
-    p.pop();
-  }
+
+    // if a job is selected, draw a summary box
+    if(jobSummary) {
+      const boxW = Math.min(760, p.width - 60);
+      const boxH = Math.min(160, p.height * 0.22);
+      const boxX = p.width/2 - boxW/2;
+      const boxY = p.height - boxH - 24;
+      
+      p.fill(30, 30, 40, 230);
+      p.noStroke();
+      p.rect(boxX, boxY, boxW, boxH, 10);
+      
+      p.fill(255);
+      p.textAlign(p.LEFT, p.TOP);
+      p.textSize(16);
+      p.text(jobSummary.title + " — " + jobSummary.summary, 
+        boxX + 16, boxY + 12, boxW - 32, boxH - 24);
+    }
+  };
+
 
     // when mouse is clicked:
   p.mousePressed = function () {
