@@ -127,7 +127,22 @@ registerSketch('sk5', function (p) {
   renderJobList(cellWidth / 2, gridY, "High Stress Jobs", highStressJobs, "(7-10)");
   renderJobList(cellWidth + cellWidth / 2, gridY, "Moderate Stress Jobs", moderateStressJobs, "(5-7)");
   renderJobList(cellWidth + cellWidth / 2, gridY + cellHeight, "Mild Stress Jobs", mildStressJobs, "(3-5)");
-
+  // checking when a job is currently active
+   if(jobSummary){
+    const boxW = Math.min(760, p.width - 60);
+    const boxH = Math.min(160, p.height * 0.22);
+    const boxX = p.width / 2 - boxW / 2;
+    const boxY = p.height / 2 - boxH - 24;
+    p.push();
+    p.fill(30, 30, 40, 230);
+    p.noStroke
+    p.rect(boxX, boxY, boxW, boxH, 10);
+    p.fill(256);
+    p.textAlign(p.LEFT, p.TOP);
+    p.textSize(20);
+    p.text(jobSummary.title + " - " + jobSummary.summary, boxX + 16, boxY + 12, boxW - 32, boxH - 24);
+    p.pop();
+  }
 
 
   }
