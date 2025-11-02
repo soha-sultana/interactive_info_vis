@@ -126,6 +126,8 @@ registerSketch('sk5', function (p) {
   renderJobList(cellWidth / 2, gridY, "High Stress Jobs", highStressJobs, "(7-10)");
   renderJobList(cellWidth + cellWidth / 2, gridY, "Moderate Stress Jobs", moderateStressJobs, "(5-7)");
   renderJobList(cellWidth + cellWidth / 2, gridY + cellHeight, "Mild Stress Jobs", mildStressJobs, "(3-5)");
+  renderJobList(cellWidth/2, gridY + cellHeight, "Low Stress Jobs", "This dataset did not have jobs for this category", "Rank: 1-3");
+
   // checking when a job is currently active
    if(jobSummary){
     const boxW = Math.min(760, p.width - 60);
