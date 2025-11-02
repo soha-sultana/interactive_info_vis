@@ -149,20 +149,20 @@ registerSketch('sk5', function (p) {
   };
 
 
-    // when mouse is clicked:
-  p.mousePressed = function () {
-      for(let i = 0; i < Occupations.length; i++){
-        const job = Occupations[i];
-        if(p.mouseX >= job.x && p.mouseX <= job.x + job.w && p.mouseY >= job.y && p.mouseY <= job.y + job.h){
-          if(jobSummary && jobSummary.title === job.title){
-            jobSummary = null; // toggle off
-          } else {
-            jobSummary = job; // show this job's summary
-          }
-          break;
+    // when mouse is clicked
+    p.mousePressed = function() {
+    for(let job of Occupations) {
+      if(p.mouseX >= job.x && p.mouseX <= job.x + job.w && 
+         p.mouseY >= job.y && p.mouseY <= job.y + job.h) {
+        if(jobSummary && jobSummary.title === job.title) {
+          jobSummary = null;
+        } else {
+          jobSummary = job;
         }
+        break;
       }
-    };
+    }
+  };
 
 
   p.windowResized = function () { p.resizeCanvas(p.windowWidth, p.windowHeight); };
