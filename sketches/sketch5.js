@@ -19,6 +19,12 @@ registerSketch('sk5', function (p) {
     p.fill(50);
     p.text("Look at the self-reported stress levels among different occupations.", 12, 80);
 
+    // split canvas into 4 sections 
+    const gridY = headerHeight + 20;
+    const gridHeight = p.height - gridY - 20;
+    const cellWidth = p.width / 2;
+    const cellHeight = gridHeight / 2;
+
   }
 
   p.windowResized = function () { p.resizeCanvas(p.windowWidth, p.windowHeight); };
