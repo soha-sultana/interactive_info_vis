@@ -37,6 +37,10 @@ registerSketch('sk5', function (p) {
     p.fill(205, 75, 75);
     p.rect(cellWidth, gridY + cellHeight, cellWidth, cellHeight);
 
+      // bottom-left square (low stress)
+    p.fill(240, 150, 150);
+    p.rect(0, gridY + cellHeight, cellWidth, cellHeight);
+
   }
 
   p.windowResized = function () { p.resizeCanvas(p.windowWidth, p.windowHeight); };
