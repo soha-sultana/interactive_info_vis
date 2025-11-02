@@ -1,5 +1,9 @@
 // Example 2
 registerSketch('sk5', function (p) {
+  // variables for interactivity
+  let Occupations = [];
+  let jobSummary = null;
+  let showSummary = 0;
   p.setup = function () {
     p.createCanvas(p.windowWidth, p.windowHeight);
   };
