@@ -116,6 +116,13 @@ registerSketch('sk5', function (p) {
     {title: "Lawyer", summary: "Lawyers have an average stress level of 5.064"}
   ];
 
+  const mildStressJobs = [
+    {title: "Manager", summary: "Managers have an average stress level of 5.00"},
+    {title: "Engineer", summary: "Engineers have an average stress level of 3.889"},
+    {title: "Teacher", summary: "Teachers have an average stress level of 4.525"},
+    {title: "Accountant", summary: "Accountants have an average stress level of 4.595"}
+  ];
+
 
 
   }
