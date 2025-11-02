@@ -45,6 +45,9 @@ registerSketch('sk5', function (p) {
     p.fill(240, 150, 150);
     p.rect(0, gridY + cellHeight, cellWidth, cellHeight);
 
+    // variable for clickable job items 
+    let jobX = [];
+
      // Add labels to each section
      p.fill(255);
     p.textAlign(p.CENTER, p.CENTER);
