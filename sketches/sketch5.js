@@ -56,6 +56,9 @@ registerSketch('sk5', function (p) {
     p.text("Moderate Stress Jobs:\nDoctor, Software Engineer, Nurse, Lawyer\n(5-7)", cellWidth + cellWidth / 2, gridY + cellHeight / 2);
     p.text("Mild Stress Jobs:\n Manager, Engineer, Teacher, Accountant\n(3-5)", cellWidth + cellWidth / 2, gridY + cellHeight + cellHeight / 2);
     p.text("Low Stress Jobs:\nAccording to this dataset, the lowest stress level was 3.89\n(falling under the mild stress category\n(1-3)", cellWidth / 2, gridY + cellHeight + cellHeight / 2);
+    // adding job list for each section
+    p.fill(255);
++   p.textAlign(p.CENTER, p.CENTER);
 
 
 
