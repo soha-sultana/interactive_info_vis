@@ -25,6 +25,10 @@ registerSketch('sk5', function (p) {
     const cellWidth = p.width / 2;
     const cellHeight = gridHeight / 2;
 
+     // top left-square 
+    p.fill(120, 10, 10);
+    p.rect(0, gridY, cellWidth, cellHeight);
+
   }
 
   p.windowResized = function () { p.resizeCanvas(p.windowWidth, p.windowHeight); };
