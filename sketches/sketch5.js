@@ -14,6 +14,11 @@ registerSketch('sk5', function (p) {
     p.textSize(50);
     p.text("Are you working your job or is your job working you?", 12, 10);
 
+    // Small summary under title 
+    p.textSize(20);
+    p.fill(50);
+    p.text("Look at the self-reported stress levels among different occupations.", 12, 80);
+
   }
 
   p.windowResized = function () { p.resizeCanvas(p.windowWidth, p.windowHeight); };
