@@ -60,6 +60,46 @@ registerSketch('sk5', function (p) {
     p.fill(255);
 +   p.textAlign(p.CENTER, p.CENTER);
 
+    // function to render the job lists and make them clickable for each section
+    function renderJobList(CenterX, topY, titleText, jobs, rankText){
+      // adding title for job list
+      p.textSize(22);
+      p.fill(256);
+      p.text(titleText, CenterX. topY + cellHeight * 0.15);
+      p.textSize(14);
+      p.fill(256, 220);
+      p.text(rankText, CenterX, topY + cellHeight * 0.07);
+
+      // listing jobs
+      p.textSize(18);
++     p.fill(255);
+      const gap = 28;
+      const startY = topY + cellHeight * 0.30 - ((jobs.length - 1) * gap) / 2;
+      for(let i = 0; i < jobs.length; i++){
+        const job = jobs[i].title;
+        const summary = jobs[i].summary;
+        const y = startY + i * gap;
+        p.text(job, CenterX, y);
+        // bounding box when clicked
+        const w = p.textWidth(job);
+        const h = p.textAscent() + p.textDescent();
+        const bx = centerX - w / 2;
+        const by = y - h / 2;
+        Occupations.push({job, summary, bx, by, w, h});
+      
+        // underline job when mouse hovers
+        if(p.mouseX >= bx && p.mouseX <= bx + w && p.mouseY >= by && p.mouseY <= by + h){
+          p.push();
+          p.stroke(256, 220);
+          p.strokeWeight(1.5);
+          p.line(bx, y + h / 2 + 6, bx + w, y + h / 2 + 6);
+          p.pop();
+
+        }
+      }
+    }
+  };
+
 
 
   }
