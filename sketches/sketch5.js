@@ -100,6 +100,15 @@ registerSketch('sk5', function (p) {
     }
   };
 
+    // jobs for each section
+
+  // high stress jobs
+  const highStressJobs = [
+    {title: "Sales Representative", summary: "Sales Representatives have an average stress level of 8.00"},
+    {title: "Sales Associate", summary: "Sales Associates have an average stress level of 7.00"},
+    {title: "Scientist", summary: "Scientists have an average stress level of 7.00"}
+  ];
+
 
 
   }
