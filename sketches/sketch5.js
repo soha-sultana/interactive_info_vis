@@ -41,6 +41,15 @@ registerSketch('sk5', function (p) {
     p.fill(240, 150, 150);
     p.rect(0, gridY + cellHeight, cellWidth, cellHeight);
 
+     // Add labels to each section
+    p.fill(255);
+    p.textAlign(p.CENTER, p.CENTER);
+    p.textSize(30);
+    p.text("High Stress Jobs\nSales Representative, Sales Associate, Scientist", cellWidth / 2, gridY + cellHeight / 2);
+    p.text("Moderate Stress Jobs\nDoctor, Software Engineer, Nurse, Lawyer", cellWidth + cellWidth / 2, gridY + cellHeight / 2);
+    p.text("Mild Stress Jobs\n Manager, Engineer, Teacher, Accountant", cellWidth + cellWidth / 2, gridY + cellHeight + cellHeight / 2);
+    p.text("Low Stress Jobs\nAccording to this dataset, the lowest stress level was 3.89\n(falling under the mild stress category)", cellWidth / 2, gridY + cellHeight + cellHeight / 2);
+
   }
 
   p.windowResized = function () { p.resizeCanvas(p.windowWidth, p.windowHeight); };
