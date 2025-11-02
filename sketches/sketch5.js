@@ -29,6 +29,10 @@ registerSketch('sk5', function (p) {
     p.fill(120, 10, 10);
     p.rect(0, gridY, cellWidth, cellHeight);
 
+    // top-right square (moderate stress)
+    p.fill(160,35,35);
+    p.rect(cellWidth, gridY, cellWidth, cellHeight);
+
   }
 
   p.windowResized = function () { p.resizeCanvas(p.windowWidth, p.windowHeight); };
