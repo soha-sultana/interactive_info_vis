@@ -123,6 +123,11 @@ registerSketch('sk5', function (p) {
     {title: "Accountant", summary: "Accountants have an average stress level of 4.595"}
   ];
 
+    // rendering the job lists 
+  renderJobList(cellWidth / 2, gridY, "High Stress Jobs", highStressJobs, "(7-10)");
+  renderJobList(cellWidth + cellWidth / 2, gridY, "Moderate Stress Jobs", moderateStressJobs, "(5-7)");
+  renderJobList(cellWidth + cellWidth / 2, gridY + cellHeight, "Mild Stress Jobs", mildStressJobs, "(3-5)");
+
 
 
   }
