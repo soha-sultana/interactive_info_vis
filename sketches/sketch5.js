@@ -3,7 +3,28 @@ registerSketch('sk5', function (p) {
   // variables for interactivity
   let Occupations = [];
   let jobSummary = null;
-  let showSummary = 0;
+ // let showSummary = 0;
+
+  // Moved job data outside of draw function so it's accessible
+  const highStressJobs = [
+    {title: "Sales Representative", summary: "Sales Representatives have an average stress level of 8.00"},
+    {title: "Sales Associate", summary: "Sales Associates have an average stress level of 7.00"},
+    {title: "Scientist", summary: "Scientists have an average stress level of 7.00"}
+  ];
+
+  const moderateStressJobs = [
+    {title: "Doctor", summary: "Doctors have an average stress level of 6.732"},
+    {title: "Software Engineer", summary: "Software Engineers have an average stress level of 6.00"},
+    {title: "Nurse", summary: "Nurses have an average stress level of 5.548"},
+    {title: "Lawyer", summary: "Lawyers have an average stress level of 5.064"}
+  ];
+
+  const mildStressJobs = [
+    {title: "Manager", summary: "Managers have an average stress level of 5.00"},
+    {title: "Engineer", summary: "Engineers have an average stress level of 3.889"},
+    {title: "Teacher", summary: "Teachers have an average stress level of 4.525"},
+    {title: "Accountant", summary: "Accountants have an average stress level of 4.595"}
+  ];
   p.setup = function () {
     p.createCanvas(p.windowWidth, p.windowHeight);
   };
@@ -99,29 +120,6 @@ registerSketch('sk5', function (p) {
       }
     }
   };
-
-    // jobs for each section
-
-  // high stress jobs
-  const highStressJobs = [
-    {title: "Sales Representative", summary: "Sales Representatives have an average stress level of 8.00"},
-    {title: "Sales Associate", summary: "Sales Associates have an average stress level of 7.00"},
-    {title: "Scientist", summary: "Scientists have an average stress level of 7.00"}
-  ];
-
-  const moderateStressJobs = [
-    {title: "Doctor", summary: "Doctors have an average stress level of 6.732"},
-    {title: "Software Engineer", summary: "Software Engineers have an average stress level of 6.00"},
-    {title: "Nurse", summary: "Nurses have an average stress level of 5.548"},
-    {title: "Lawyer", summary: "Lawyers have an average stress level of 5.064"}
-  ];
-
-  const mildStressJobs = [
-    {title: "Manager", summary: "Managers have an average stress level of 5.00"},
-    {title: "Engineer", summary: "Engineers have an average stress level of 3.889"},
-    {title: "Teacher", summary: "Teachers have an average stress level of 4.525"},
-    {title: "Accountant", summary: "Accountants have an average stress level of 4.595"}
-  ];
 
     // rendering the job lists 
   renderJobList(cellWidth / 2, gridY, "High Stress Jobs", highStressJobs, "(7-10)");
