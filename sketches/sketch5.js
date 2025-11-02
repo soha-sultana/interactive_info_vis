@@ -29,9 +29,6 @@ registerSketch('sk5', function (p) {
     const cellWidth = p.width / 2;
     const cellHeight = gridHeight / 2;
 
-    let jobX = [];
-    Occupations = [];
-
      // top left-square 
     p.fill(120, 10, 10);
     p.rect(0, gridY, cellWidth, cellHeight);
@@ -47,6 +44,9 @@ registerSketch('sk5', function (p) {
       // bottom-left square (low stress)
     p.fill(240, 150, 150);
     p.rect(0, gridY + cellHeight, cellWidth, cellHeight);
+
+     let jobX = [];
+    Occupations = [];
 
      // Add labels to each section
      p.fill(255);
