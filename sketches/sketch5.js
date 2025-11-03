@@ -132,9 +132,9 @@ registerSketch('sk5', function (p) {
     // if a job is selected, draw a summary box
     if(jobSummary) {
       const boxW = Math.min(760, p.width - 60);
-      const boxH = Math.min(160, p.height * 0.22);
+      const boxH = Math.min(160, p.height * 0.25);
       const boxX = p.width/2 - boxW/2;
-      const boxY = p.height - boxH - 24;
+      const boxY = p.height - boxH - 15;
       
       p.fill(30, 30, 40, 230);
       p.noStroke();
