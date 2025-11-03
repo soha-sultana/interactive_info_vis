@@ -30,7 +30,7 @@ registerSketch('sk5', function (p) {
   };
 
   p.draw = function () {
-    p.background(250);
+    p.background(256,220,190);
     const headerHeight = Math.min(100, p.height * 0.1);
     
     // Added title 
