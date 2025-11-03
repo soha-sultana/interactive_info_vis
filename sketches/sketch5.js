@@ -1,11 +1,9 @@
 // Example 2
 registerSketch('sk5', function (p) {
-  // variables for interactivity
   let Occupations = [];
   let jobSummary = null;
- // let showSummary = 0;
 
-  // Moved job data outside of draw function so it's accessible
+  // Moved job data outside of functiom
   const highStressJobs = [
     {title: "Sales Representative", summary: "Sales Representatives have an average stress level of 8.00"},
     {title: "Sales Associate", summary: "Sales Associates have an average stress level of 7.00"},
@@ -25,6 +23,7 @@ registerSketch('sk5', function (p) {
     {title: "Teacher", summary: "Teachers have an average stress level of 4.525"},
     {title: "Accountant", summary: "Accountants have an average stress level of 4.595"}
   ];
+
   p.setup = function () {
     p.createCanvas(p.windowWidth, p.windowHeight);
   };
@@ -33,44 +32,39 @@ registerSketch('sk5', function (p) {
     p.background(256,220,190);
     const headerHeight = Math.min(100, p.height * 0.1);
     
-    // Added title 
+    // Title 
     p.noStroke();
     p.fill(20);
     p.textAlign(p.LEFT, p.TOP);
     p.textSize(50);
     p.text("Are you working your job or is your job working you?", 12, 10);
 
-    // Small summary under title 
+    // Summary text
     p.textSize(20);
     p.fill(50);
-    p.text("Look at the self-reported stress levels among different occupations.", 12, 80);
+    p.text("Look at the self-reported stress levels among different occupations. This is measured on a scale of 1-10, with 1 being the lowest stress level and 10 being the highest.", 12, 80);
 
-    // split canvas into 4 sections 
+    // Grid layout
     const gridY = headerHeight + 20;
     const gridHeight = p.height - gridY - 20;
     const cellWidth = p.width / 2;
-    const cellHeight = gridHeight / 2;
+    const cellHeight = gridHeight / 2; 
 
-     // top left-square 
+    // 4 squares
+    p.noStroke();
     p.fill(120, 10, 10);
     p.rect(0, gridY, cellWidth, cellHeight);
-
-    // top-right square (moderate stress)
-    p.fill(160,35,35);
+    p.fill(160, 35, 35);
     p.rect(cellWidth, gridY, cellWidth, cellHeight);
-
-    // bottom right-square (mild stress)
     p.fill(205, 75, 75);
     p.rect(cellWidth, gridY + cellHeight, cellWidth, cellHeight);
-
-      // bottom-left square (low stress)
     p.fill(240, 150, 150);
     p.rect(0, gridY + cellHeight, cellWidth, cellHeight);
 
-    // let jobX = [];
+    // Clear occupations array each frame
     Occupations = [];
 
-    // function to render the job lists and make them clickable for each section
+    // Helper function to render job lists
     function renderJobList(centerX, topY, titleText, jobs, rankText) {
       p.textAlign(p.CENTER, p.CENTER);
       
@@ -79,7 +73,7 @@ registerSketch('sk5', function (p) {
       p.fill(255);
       p.text(titleText, centerX, topY + cellHeight * 0.15);
       
-      // Rank
+      // Stress Level
       p.textSize(14);
       p.fill(255, 220);
       p.text(rankText, centerX, topY + cellHeight * 0.07);
@@ -95,13 +89,13 @@ registerSketch('sk5', function (p) {
         const y = startY + i * gap;
         p.text(job.title, centerX, y);
         
-        // Calculating clickable area
+        // Calculate clickable area
         const w = p.textWidth(job.title);
         const h = p.textAscent() + p.textDescent();
         const x = centerX - w/2;
         const by = y - h/2;
         
-        // Store job data for click
+        // Store job data for click detection
         Occupations.push({
           title: job.title,
           summary: job.summary,
@@ -122,14 +116,13 @@ registerSketch('sk5', function (p) {
       }
     }
 
-    // rendering the job lists 
-  renderJobList(cellWidth / 2, gridY, "High Stress Jobs", highStressJobs, "(7-10)");
-  renderJobList(cellWidth + cellWidth / 2, gridY, "Moderate Stress Jobs", moderateStressJobs, "(5-7)");
-  renderJobList(cellWidth + cellWidth / 2, gridY + cellHeight, "Mild Stress Jobs", mildStressJobs, "(3-5)");
-  renderJobList(cellWidth/2, gridY + cellHeight, "Low Stress Jobs:\nThis dataset did not have jobs for this category",[], "Rank: 1-3");
-
-
-    // if a job is selected, draw a summary box
+    // Render all job lists
+    renderJobList(cellWidth/2, gridY, "High Stress Jobs", highStressJobs, "Rank: 7-10");
+    renderJobList(cellWidth + cellWidth/2, gridY, "Moderate Stress Jobs", moderateStressJobs, "Rank: 5-7");
+    renderJobList(cellWidth + cellWidth/2, gridY + cellHeight, "Mild Stress Jobs", mildStressJobs, "Rank: 3-5");
+    renderJobList(cellWidth/2, gridY + cellHeight, "Low Stress Jobs:\nThis dataset did not have jobs for this category",[], "Rank: 1-3");
+    
+    // summary box if job is selected
     if(jobSummary) {
       const boxW = Math.min(760, p.width - 60);
       const boxH = Math.min(160, p.height * 0.25);
@@ -148,9 +141,7 @@ registerSketch('sk5', function (p) {
     }
   };
 
-
-    // when mouse is clicked
-    p.mousePressed = function() {
+  p.mousePressed = function() {
     for(let job of Occupations) {
       if(p.mouseX >= job.x && p.mouseX <= job.x + job.w && 
          p.mouseY >= job.y && p.mouseY <= job.y + job.h) {
@@ -164,6 +155,7 @@ registerSketch('sk5', function (p) {
     }
   };
 
-
-  p.windowResized = function () { p.resizeCanvas(p.windowWidth, p.windowHeight); };
+  p.windowResized = function() {
+    p.resizeCanvas(p.windowWidth, p.windowHeight);
+  };
 });
